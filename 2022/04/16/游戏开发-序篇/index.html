@@ -360,7 +360,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2022/04/16/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%BA%8F%E7%AF%87/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2022/04/16/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%BA%8F%E7%AF%87/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2022/04/16/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91-%E5%BA%8F%E7%AF%87/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -371,7 +371,7 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv">本文阅读数<i class="fa fa-file-o"></i>
+            <span class="page-pv">本文阅读数 <i class="fa fa-file-o"></i>
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
@@ -493,7 +493,12 @@
 
   
     <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
     </div>
+
   
 
 
@@ -646,7 +651,7 @@
 
   
     <span class="site-uv">
-      访客数<i class="fa fa-user"></i>
+      访客数 <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人次
     </span>
@@ -654,7 +659,7 @@
 
   
     <span class="site-pv">
-      访问量<i class="fa fa-eye"></i>
+      访问量 <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       次
     </span>
@@ -702,8 +707,6 @@
   
 
 
-  
-
 
 
 
@@ -745,11 +748,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
   
@@ -823,30 +821,54 @@
 
 
 
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'qinyongze123',
+            repo: 'commentforblog',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '63c21ac0ed91688704704fed1ce3ca4aaa11d911',
+            
+                client_id: 'e2335bf6d2b2729569ff'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: '27xc0W3IgNUCasyPKoerSozu-MdYXbMMI',
-        appKey: 'aP28WMB0SJ4XNzjxCsaHLhFH',
-        placeholder: 'Just go go',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
+
 
 
 
