@@ -132,6 +132,16 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0c287d5d772f0eedea137f827a496e4c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -312,10 +322,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
-      
+      <div id="lv-container" data-id="city" data-uid="MTAyMC81NjEyMC8zMjU4Mw"></div>
     </div>
 
   
@@ -608,57 +615,22 @@
 
 
   
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
 
 
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-        <script src="https://billts.site/js/gitment.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-      <style>
-        a.gitment-editor-footer-tip { display: none; }
-        .gitment-container.gitment-footer-container { display: none; }
-      </style>
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'qinyongze123',
-            repo: 'commentforblog',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '63c21ac0ed91688704704fed1ce3ca4aaa11d911',
-            
-                client_id: 'e2335bf6d2b2729569ff'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
