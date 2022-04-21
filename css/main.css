@@ -2892,33 +2892,49 @@ mark.search-keyword {
     padding: 10px 12px;
   }
 }
-body {
-  background: url("/images/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 100% 100%;
+/*
+body 
+{
+    background:url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:100% 100%;
 }
+// 各板块设置透明度
+// 侧边框的透明度设置
 .content-wrap {
-  opacity: 0.75;
-}
-.main-inner {
-  background-color: rgba(255,255,255,0.9);
-}
-.post-block {
   opacity: 0.95;
 }
-.sidebar {
+// 主板块
+.main-inner 
+{
+   background-color: rgba(255, 255,255, 0.95);
+}
+// 主版块里的post板块(f12,cmd+shift+c找出)
+.post-block 
+{
   opacity: 0.95;
 }
-.header-inner {
-  background: rgba(255,255,255,0.95);
-}
-.pagination {
+// 侧边框的透明度设置
+.sidebar 
+{
   opacity: 0.95;
 }
-.popup {
+// 菜单栏的透明度设置
+.header-inner 
+{
+  background: rgba(255, 255, 255, 0.95);
+}
+// 页码
+.pagination 
+{
   opacity: 0.95;
 }
-.footer-inner {
-  color: #f5f7f9;
+// 搜索框（local-search）的透明度设置
+.popup 
+{
+  opacity: 0.95;
 }
+//底部颜色小改一下
+.footer-inner {color: #f5f7f9;}
+*/
