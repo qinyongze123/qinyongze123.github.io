@@ -2892,14 +2892,13 @@ mark.search-keyword {
     padding: 10px 12px;
   }
 }
-/*
-body 
-{
-    background:url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-position:100% 100%;
+body {
+  background: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% 100%;
 }
+/*
 // 各板块设置透明度
 // 侧边框的透明度设置
 .content-wrap {
@@ -2935,6 +2934,7 @@ body
 {
   opacity: 0.95;
 }
-//底部颜色小改一下
-.footer-inner {color: #f5f7f9;}
 */
+.footer-inner {
+  color: #3d3d3d;
+}
